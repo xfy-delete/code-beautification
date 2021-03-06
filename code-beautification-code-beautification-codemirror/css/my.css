@@ -1,0 +1,123 @@
+.cm-trailingspace {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAYAAAB/qH1jAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QUXCToH00Y1UgAAACFJREFUCNdjPMDBUc/AwNDAAAFMTAwMDA0OP34wQgX/AQBYgwYEx4f9lQAAAABJRU5ErkJggg==) !important;
+  background-position: bottom left !important;
+  background-repeat: repeat-x !important;
+}
+
+div.CodeMirror {
+	position: relative !important;
+}
+
+div.CodeMirror > .myToolbar {
+  z-index: 999 !important;
+	position: absolute !important;
+	top: .3em !important;
+	right: .7em !important;
+	transition: opacity 0.3s ease-in-out !important;
+	opacity: 0 !important;
+	font-size: 18px;
+}
+
+div.CodeMirror:hover > .myToolbar {
+	opacity: 1 !important;
+}
+
+/* Separate line b/c rules are thrown out if selector is invalid.
+   IE11 and old Edge versions don't support :focus-within. */
+div.CodeMirror:focus-within > .myToolbar {
+	opacity: 1 !important;
+}
+
+div.CodeMirror > .myToolbar .myToolbar-item {
+	display: inline-block !important;
+}
+
+div.CodeMirror > .myToolbar a {
+	cursor: pointer !important;
+}
+
+div.CodeMirror > .myToolbar a,
+div.CodeMirror > .myToolbar span,
+div.CodeMirror > .myToolbar ul {
+	color: #bbb !important;
+	font-size: .8em !important;
+	padding: 0 .5em !important;
+	background: #f5f2f0 !important;
+	background: rgba(224, 224, 224, 0.2) !important;
+	box-shadow: 0 2px 0 0 rgba(0,0,0,0.2) !important;
+	border-radius: .5em !important;
+}
+
+div.CodeMirror > .myToolbar a:hover,
+div.CodeMirror > .myToolbar a:focus,
+div.CodeMirror > .myToolbar span:hover,
+div.CodeMirror > .myToolbar span:focus {
+	color: inherit !important;
+	text-decoration: none !important;
+}
+
+div.CodeMirror > .myToolbar .DivUl{
+	position: relative;
+	text-align: center;
+}
+
+div.CodeMirror > .myToolbar .DivUl ul{
+	left: 50%;
+	top: 50%;   
+  transform: translate(-50%, 7%);    /* 50%为自身尺寸的一半 */  
+	display: none;
+	max-width: 88px;
+	position: absolute;
+	max-height: 160px;
+	overflow-y: auto;
+	list-style: none;
+	padding-left: 0;
+	cursor:pointer;
+}
+
+
+div.CodeMirror > .myToolbar ul::-webkit-scrollbar
+{
+	width: 9px;
+	height: 9px;
+	background: transparent;
+}
+
+
+div.CodeMirror > .myToolbar ul::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background: rgba(0,0,0,0.3);
+}
+
+div.CodeMirror > .myToolbar ul::-webkit-scrollbar-track {
+	border-radius: 25px;
+	background: rgb(238, 238, 238) !important;
+}
+
+div.CodeMirror > .myToolbar ul li{
+	max-width: 88px;
+	padding: 1px;
+	cursor:pointer;
+	margin: 0 !important;
+	padding-top: 2px;
+	text-align: left;
+	white-space:nowrap; /*不让文字内容换行*/
+	overflow:hidden;/*文字溢出的部分隐藏起来*/
+	text-overflow:ellipsis; /*用...替代溢出的部分*/
+}
+
+div.CodeMirror > .myToolbar ul li:hover, .is-selected{
+	color: red;
+}
+
+
+.markdown_views .prettyprint, .markdown_views pre .prettyprint{
+	margin: 0 !important;
+	padding: 0 !important;
+  background-color: transparent !important;
+  border: not specified !important;
+}
+
+.tab-size .js-line-number{
+	display: none !important;
+}

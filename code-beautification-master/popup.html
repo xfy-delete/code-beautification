@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>popup页</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style>
+		body {
+			font-family: 'Microsoft Yahei';
+			width: 82px;
+			min-height: 81px;
+		}
+
+		#toggle-button {
+			display: none;
+		}
+
+		.button-label {
+			position: relative;
+			display: inline-block;
+			width: 81px;
+			height: 30px;
+			background-color: #ccc;
+			box-shadow: #ccc 0px 0px 0px 2px;
+			border-radius: 30px;
+			overflow: hidden;
+		}
+
+		.circle {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 36px;
+			height: 30px;
+			border-radius: 50%;
+			background-color: #fff;
+		}
+
+		.button-label .text {
+			line-height: 30px;
+			font-size: 18px;
+			text-shadow: 0 0 2px #ddd;
+		}
+
+		.on {
+			color: #fff;
+			display: none;
+			text-indent: 25px;
+		}
+
+		.off {
+			color: #fff;
+			display: inline-block;
+			text-indent: 30px;
+		}
+
+		.button-label .circle {
+			left: 0;
+			transition: all 0.3s;
+		}
+
+		#toggle-button:checked+label.button-label .circle {
+			left: 64px;
+		}
+
+		#toggle-button:checked+label.button-label .on {
+			display: inline-block;
+		}
+
+		#toggle-button:checked+label.button-label .off {
+			display: none;
+		}
+
+		#toggle-button:checked+label.button-label {
+			background-color: #51ccee;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="toggle-button-wrapper">
+		<input type="checkbox" id="toggle-button" name="switch">
+		<label for="toggle-button" class="button-label" style="cursor: pointer;">
+			<span class="circle"></span>
+			<span class="text on">ON</span>
+			<span class="text off">OFF</span>
+		</label>
+	</div>
+	<div style="top: 6px;">
+		<input type="button" id="btn"  style="cursor: pointer; top: 6px; width: 49%; float: left;" value="添加" />
+		<input type="button" id="clear"  style="cursor: pointer; top: 6px; width: 49%; float:right;" value="移除" />
+	</div>
+	<select style="width:81px; cursor: pointer;" id="theme">
+		<option value="Default">Default</option>
+		<option value="Coy">Coy</option>
+		<option value="Dark">Dark</option>
+		<option value="Funky">Funky</option>
+		<option value="Okaidia">Okaidia</option>
+		<option value="Twilight">Twilight</option>
+		<option value="SolarizedLight">SolarizedLight</option>
+		<option value="TomorrowNight">TomorrowNight</option>
+	</select>
+	<script type="text/javascript" src="js/popup.js"></script>
+</body>
+
+</html>

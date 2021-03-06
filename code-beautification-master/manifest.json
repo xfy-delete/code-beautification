@@ -1,0 +1,73 @@
+{
+	"manifest_version": 2,
+	"name": "code-beautification",
+	"homepage_url": "https://github.com/liandie/code-beautification",
+  "author": "Xu Fangyi",
+	"version": "1.1.0",
+	"description": "这是一个对有代码显示的网站进行代码美化",
+	"icons": {
+		"16": "img/icon.png",
+		"48": "img/icon.png",
+		"128": "img/icon.png"
+	},
+	"browser_action": {
+		"default_icon": {
+			"16": "img/icon.png",
+			"48": "img/icon.png",
+			"128": "img/icon.png"
+		},
+		"default_title": "code-beautification",
+		"default_popup": "popup.html"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"js": [
+				"js/highlight.min.js",
+				"js/marked.min.js",
+				"js/mermaid.js",
+				"js/init.js",
+				"js/content-script.js"
+			],
+			"css": [
+				"css/mermaid.forest.css"
+			],
+			"run_at": "document_start"
+		}
+	],
+	"web_accessible_resources": [
+		"js/elm.js",
+		"js/marked.min.js",
+		"js/highlight.min.js",
+		"js/init.js",
+		"js/toolbar.js",
+		"js/clipboard.min.js",
+		"js/mermaid.js",
+		"css/mermaid.forest.css",
+		"js/prism/Dark.js",
+		"css/prism/Dark.css",
+		"js/prism/Default.js",
+		"css/prism/Default.css",
+		"js/prism/Coy.js",
+		"css/prism/Coy.css",
+		"js/prism/Funky.js",
+		"css/prism/Funky.css",
+		"js/prism/Okaidia.js",
+		"css/prism/Okaidia.css",
+		"js/prism/Twilight.js",
+		"css/prism/Twilight.css",
+		"js/prism/SolarizedLight.js",
+		"css/prism/SolarizedLight.css",
+		"js/prism/TomorrowNight.js",
+		"css/prism/TomorrowNight.css"
+	],
+	"permissions": [
+		"storage",
+		"tabs",
+		"http://*/*",
+		"https://*/*"
+	],
+	"default_locale": "zh_CN"
+}
